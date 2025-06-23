@@ -1,10 +1,15 @@
 <h3 id="title">{{myPropt}}</h3>
 <div class="list">
-  List
+  <h5 class="list__title">List</h5>
   <div class="list-item">
-    @for (user of users; track $index) {
-    <p> {{user.firstName}} - {{user.lastName}}</p>
+    @for (user of users; track user.firstName) {
+    <p> <span>{{user.firstName}}</span>@if (showLastName) { - <span>
+        {{user.lastName}}
+      </span>}</p>
 
+    } @empty {
+    <p>There is not Names.</p>
     }
+    <button (click)="handleClick()" type="button" class="list-btn">Toggle Lastname</button>
   </div>
 </div>

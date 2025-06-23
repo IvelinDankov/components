@@ -28,9 +28,15 @@ export class ListComponent {
     },
   ];
 
+  showLastName = true;
+
   constructor() {
     // setTimeout(() => {
     //   this.myPropt = `Hello after 5 seconds!`;
     // }, 5000);
+  }
+
+  handleClick() {
+    this.showLastName = !this.showLastName;
   }
 }
