@@ -1,6 +1,10 @@
 import { Component } from "@angular/core";
 import { ListItemComponent } from "../list-item/list-item.component";
 
+interface CustomEvent {
+  test: number;
+}
+
 @Component({
   selector: "app-list",
   imports: [ListItemComponent],
@@ -46,4 +50,6 @@ export class ListComponent {
   showSelectedIndex(): boolean {
     return this.selectedUserIndex !== null && this.selectedUserIndex >= 0;
   }
+
+  customEventHandler() {}
 }

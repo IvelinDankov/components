@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 @Component({
   selector: "app-list-item",
@@ -10,5 +10,9 @@ export class ListItemComponent {
   @Input() user!: { firstName: string; lastName: string };
   @Input() showLastName!: boolean;
 
-  selectClickHandler() {}
+  @Output() custumEvent = new EventEmitter();
+
+  selectClickHandler() {
+    this.custumEvent.emit({ test: 123 });
+  }
 }
