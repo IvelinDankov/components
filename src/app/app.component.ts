@@ -9,4 +9,9 @@ import { ListComponent } from "./list/list.component";
 })
 export class AppComponent {
   title = "components";
+
+  changeTitleHandler(titleValue: string) {
+    this.title = titleValue;
+    titleValue = "";
+  }
 }
