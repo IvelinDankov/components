@@ -1,17 +1,29 @@
 <h3 id="title">{{myPropt}}</h3>
 <div class="list">
+
+  @if (showSelectedIndex()) {
+
+  <div>
+
+    Selected index is {{selectedUserIndex}}
+  </div>
+  }
+
   <h5 class="list__title">List</h5>
-  @for (user of users; track user.firstName) {
-  <app-list-item [user]="user" [showLastName]="showLastName" />
+  @for (user of users; track $index) {
+
+  <app-list-item [user]="user" [showLastName]="showLastName" (click)="selectedUserIndex = $index" />
 
   } @empty {
   <p>There is not Names.</p> }
   <div class="list-item">
 
     <button (click)="handleClick($event)" type="button" class="list-btn">@if (showLastName) {
-      <ng-container>Hide Lastname</ng-container>
+      <ng-container>Hide </ng-container>
 
       } @else {
-      <ng-container>Show Lastname</ng-container> }</button>
+      <ng-container>Show </ng-container> } Lastname</button>
+
+
   </div>
 </div>

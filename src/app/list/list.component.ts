@@ -31,6 +31,8 @@ export class ListComponent {
 
   showLastName = false;
 
+  selectedUserIndex: null | number = null;
+
   constructor() {
     // setTimeout(() => {
     //   this.myPropt = `Hello after 5 seconds!`;
@@ -39,5 +41,9 @@ export class ListComponent {
 
   handleClick(event: MouseEvent) {
     this.showLastName = !this.showLastName;
+  }
+
+  showSelectedIndex(): boolean {
+    return this.selectedUserIndex !== null && this.selectedUserIndex >= 0;
   }
 }
