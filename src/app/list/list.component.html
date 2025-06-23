@@ -1,5 +1,10 @@
-<h3 id="title">Title</h3>
+<h3 id="title">{{myPropt}}</h3>
 <div class="list">
   List
-  <div class="list-item">List Item</div>
+  <div class="list-item">
+    @for (user of users; track $index) {
+    <p> {{user.firstName}} - {{user.lastName}}</p>
+
+    }
+  </div>
 </div>
