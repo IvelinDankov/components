@@ -1,15 +1,17 @@
 <h3 id="title">{{myPropt}}</h3>
 <div class="list">
   <h5 class="list__title">List</h5>
-  <div class="list-item">
-    @for (user of users; track user.firstName) {
-    <p> <span>{{user.firstName}}</span>@if (showLastName) { - <span>
-        {{user.lastName}}
-      </span>}</p>
+  @for (user of users; track user.firstName) {
+  <app-list-item [user]="user" [showLastName]="showLastName" />
 
-    } @empty {
-    <p>There is not Names.</p>
-    }
-    <button (click)="handleClick()" type="button" class="list-btn">Toggle Lastname</button>
+  } @empty {
+  <p>There is not Names.</p> }
+  <div class="list-item">
+
+    <button (click)="handleClick($event)" type="button" class="list-btn">@if (showLastName) {
+      <ng-container>Hide Lastname</ng-container>
+
+      } @else {
+      <ng-container>Show Lastname</ng-container> }</button>
   </div>
 </div>

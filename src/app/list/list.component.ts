@@ -1,8 +1,9 @@
 import { Component } from "@angular/core";
+import { ListItemComponent } from "../list-item/list-item.component";
 
 @Component({
   selector: "app-list",
-  imports: [],
+  imports: [ListItemComponent],
   templateUrl: "./list.component.html",
   styleUrl: "./list.component.scss",
 })
@@ -28,7 +29,7 @@ export class ListComponent {
     },
   ];
 
-  showLastName = true;
+  showLastName = false;
 
   constructor() {
     // setTimeout(() => {
@@ -36,7 +37,7 @@ export class ListComponent {
     // }, 5000);
   }
 
-  handleClick() {
+  handleClick(event: MouseEvent) {
     this.showLastName = !this.showLastName;
   }
 }
